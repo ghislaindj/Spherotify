@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <RobotKit/RobotKit.h>
+#import "SoundController.h"
 #include <ApplicationServices/ApplicationServices.h>
 #include <unistd.h>
 
@@ -135,14 +136,28 @@
         [self.accelZField setStringValue:[NSString stringWithFormat:@"%.6f", accelerometerData.acceleration.z]];
         [self.gyroRollField setStringValue:[NSString stringWithFormat:@"%.0f", attitudeData.roll]];
         [self.gyroPitchField setStringValue:[NSString stringWithFormat:@"%.0f", attitudeData.pitch]];
+        NSLog([NSString stringWithFormat:@"%f", trunc(attitudeData.yaw)]);
         [self.gyroYawField setStringValue:[NSString stringWithFormat:@"%f", trunc(attitudeData.yaw)]];
         
         // Control mouse events
         if( isControllingMouse ) {
-            
-            [self moveMouseWithRoll:attitudeData.roll
-                              pitch:attitudeData.pitch
-                                yaw:attitudeData.yaw];
+//            [self moveMouseWithRoll:attitudeData.roll
+//                              pitch:attitudeData.pitch
+//                                yaw:attitudeData.yaw];
+            [self controlVolumeWithRoll:attitudeData.roll];
+        }
+    }
+}
+
+-(void) controlVolumeWithRoll:(float)roll {
+
+    if( ABS(roll) > 40 ) {
+        if( roll < 0 ) {
+            [SoundController volumeDown];
+            //[SoundController playVolumeSound];
+        } else {
+            [SoundController volumeUp];
+            //[SoundController playVolumeSound];
         }
     }
 }
@@ -284,11 +299,13 @@
         isControllingMouse = YES;
         toggleControllerButton.title = @"Turn Spherotify Off";
         [RKRGBLEDOutputCommand sendCommandWithRed:0.0 green :1.0 blue :0.0];
+        [SoundController playVolumeSound];
     }
     else {
         isControllingMouse = NO;
         toggleControllerButton.title = @"Turn Spherotify On";
         [RKRGBLEDOutputCommand sendCommandWithRed:1.0 green :0.0 blue :0.0];
+        [SoundController playVolumeSound];
     }
 }
 

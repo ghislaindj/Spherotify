@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1534DDFF186F0DF50018519E /* SoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1534DDFE186F0DF50018519E /* SoundController.m */; };
 		671F9302162F244C00003CFD /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 671F92FE162F244000003CFD /* IOBluetooth.framework */; };
 		671F9303162F244C00003CFD /* IOBluetoothUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 671F92FF162F244000003CFD /* IOBluetoothUI.framework */; };
 		6735454F16545D1800C6B9B1 /* RobotKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6735454E16545D1800C6B9B1 /* RobotKit.framework */; };
@@ -44,6 +45,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1534DDFD186F0DF50018519E /* SoundController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundController.h; sourceTree = "<group>"; };
+		1534DDFE186F0DF50018519E /* SoundController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundController.m; sourceTree = "<group>"; };
 		671F92FE162F244000003CFD /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = System/Library/Frameworks/IOBluetooth.framework; sourceTree = SDKROOT; };
 		671F92FF162F244000003CFD /* IOBluetoothUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetoothUI.framework; path = System/Library/Frameworks/IOBluetoothUI.framework; sourceTree = SDKROOT; };
 		6735454E16545D1800C6B9B1 /* RobotKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RobotKit.framework; sourceTree = "<group>"; };
@@ -89,7 +92,7 @@
 		673C5CA01598DC4300C444DE = {
 			isa = PBXGroup;
 			children = (
-				67BA9C20163715A2007E84F0 /* MouseController */,
+				67BA9C20163715A2007E84F0 /* Spherotify */,
 				673C5CAE1598DC4300C444DE /* Frameworks */,
 				673C5CAC1598DC4300C444DE /* Products */,
 			);
@@ -126,7 +129,7 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		67BA9C20163715A2007E84F0 /* MouseController */ = {
+		67BA9C20163715A2007E84F0 /* Spherotify */ = {
 			isa = PBXGroup;
 			children = (
 				67BA9C21163715A2007E84F0 /* AppDelegate.h */,
@@ -137,7 +140,10 @@
 				67BA9C29163715A2007E84F0 /* main.m */,
 				67BA9C2B163715A2007E84F0 /* Spherotify-Info.plist */,
 				67BA9C2C163715A2007E84F0 /* Spherotify-Prefix.pch */,
+				1534DDFD186F0DF50018519E /* SoundController.h */,
+				1534DDFE186F0DF50018519E /* SoundController.m */,
 			);
+			name = Spherotify;
 			path = MouseController;
 			sourceTree = "<group>";
 		};
@@ -251,6 +257,7 @@
 			files = (
 				67BA9C33163715A2007E84F0 /* AppDelegate.m in Sources */,
 				67BA9C37163715A2007E84F0 /* main.m in Sources */,
+				1534DDFF186F0DF50018519E /* SoundController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
